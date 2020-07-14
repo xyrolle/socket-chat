@@ -15,16 +15,16 @@ const Message = ({ message: { user, text }, name }) => {
 	return (
 		<Fragment>
 			{
-				isSentByCurrentUser ? <div className='message ng-scope messageContainer justifyEnd'>
+				isSentByCurrentUser ? <div className='message justifyEnd'>
 					<div className='messageBox backgroundBlue'>
-						<p className='sentText pb'>{trimedName}</p>
-						<p className='ng-binding messageText colorWhite'>{ReactEmoji.emojify(text)}</p>
+						<p className='pb'>{trimedName}</p>
+						<p>{ReactEmoji.emojify(text)}</p>
 					</div>
 				</div> :
-				<div className='message ng-scope messageContainer justifyStart mg'>
+				<div className='message mg'>
 					<div className='messageBox backgroundLight'>
-						<p className='sentText pb'>{user}</p>
-						<p className='messageText colorDark'>{ReactEmoji.emojify(text)}</p>
+						<p className='pb'>{user}</p>
+						<p>{ReactEmoji.emojify(text)}</p>
 					</div>
 				</div>}
 		</Fragment>

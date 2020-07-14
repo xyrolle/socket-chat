@@ -4,9 +4,9 @@ import '../styles/Input.scss';
 
 const Input = ({ message, setMessage, sendMessage }) => {
 	const handleScroll = () => {
-		const messages = document.querySelectorAll('.messageContainer');
+		const messages = document.querySelectorAll('.message');
 		const lastMessage = messages[messages.length - 1];
-		lastMessage.scrollIntoView();
+		lastMessage.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	const handleClick = (evt) => {
@@ -20,11 +20,11 @@ const Input = ({ message, setMessage, sendMessage }) => {
 	};
 
 	return (
-		<form className='ng-pristine ng-valid'>
+		<form>
 			<input
-				className='ng-pristine ng-untouched ng-valid'
+				className='input'
 				type='text'
-				placeholder={'Type a message...'}
+				placeholder='Enter a message...'
 				value={message}
 				onChange={(evt) => setMessage(evt.target.value)}
 				onKeyPress={handleKeyPress}

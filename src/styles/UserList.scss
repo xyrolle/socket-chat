@@ -1,25 +1,10 @@
-// .usersList {
-// 	background: #43d3c5;
-// 	-webkit-box-flex: 1;
-// 	flex: 1 1 auto;
-// 	height: 100%;
-// 	border-top-left-radius: 4px;
-// 	border-bottom-left-radius: 4px;
-// }
-
-aside {
-	background: #43d3c5;
-	-webkit-box-flex: 1;
-	flex: 1 1 auto;
-	height: 100%;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
+$inbox-primary: #edf2f4;
 
 .users-heading {
 	text-align: center;
 	padding: 10px 60px;
-	color: #edf2f4;
+	color: $inbox-primary;
+	font-size: 1.8rem;
 }
 
 li {

@@ -6,11 +6,7 @@ import Message from './Message.jsx';
 import '../styles/Message.scss';
 
 const Messages = ({ messages, name }) => {
-	return (
-		<div className='messages message-wrap'>
-			{messages.map((message) => <Message message={message} name={name} />)}
-		</div>
-	);
+	return <div className='message-wrap'>{messages.map((message) => <Message message={message} name={name} />)}</div>;
 };
 
 export default Messages;

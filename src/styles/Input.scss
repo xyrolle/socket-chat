@@ -1,35 +1,36 @@
-// .form {
-// 	display: flex;
-// 	border-top: 2px solid #d3d3d3;
-// 	width: 50%;
-// }
+$inbox-primary: #edf2f4;
+$inbox-secondary: #dd7373;
 
-// .input {
-// }
-
-// .input-container {
-// 	position: relative;
-// 	border: none;
-// 	border-radius: 0;
-// 	padding: 5%;
-// 	font-size: 1.2em;
-// 	z-index: 1;
-// 	width: 100%;
-// }
-
-// input:focus,
-// textarea:focus,
-// select:focus {
-// 	outline: none;
-// }
-
-// .sendButton {
-// 	color: #fff;
-// 	text-transform: uppercase;
-// 	text-decoration: none;
-// 	background: #2979ff;
-// 	padding: 20px;
-// 	display: inline-block;
-// 	border: none;
-// 	width: 20%;
-// }
+footer {
+	background-color: $inbox-primary;
+	height: 12%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid darken($inbox-primary, 12%);
+	input[type="text"] {
+		border: none;
+		font-size: 1.1em;
+		background: transparent;
+		padding: 0.8em;
+		outline: none;
+		color: #343d46;
+		width: 100%;
+	}
+	button {
+		background: $inbox-secondary;
+		color: #fff;
+		width: 17%;
+		border-radius: 4px;
+		padding: 0.8em;
+		margin: 0 1em;
+		border: none;
+		cursor: pointer;
+		appearance: none;
+	}
+	form {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
