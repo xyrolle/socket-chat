@@ -5,6 +5,7 @@ import '../styles/Message.scss';
 
 const Message = ({ message: { user, text }, name }) => {
 	let isSentByCurrentUser = false;
+	let isSentByAdmin = false;
 
 	const trimedName = name.trim().toLowerCase();
 
@@ -12,21 +13,28 @@ const Message = ({ message: { user, text }, name }) => {
 		isSentByCurrentUser = true;
 	}
 
+	if (user === 'admin') {
+		isSentByAdmin = true;
+	}
+
 	return (
 		<Fragment>
 			{
-				isSentByCurrentUser ? <div className='message justifyEnd'>
-					<div className='messageBox backgroundBlue'>
-						<p className='pb'>{trimedName}</p>
-						<p>{ReactEmoji.emojify(text)}</p>
-					</div>
-				</div> :
-				<div className='message mg'>
-					<div className='messageBox backgroundLight'>
-						<p className='pb'>{user}</p>
-						<p>{ReactEmoji.emojify(text)}</p>
-					</div>
-				</div>}
+				<div
+					className={
+						'message ' +
+						(
+							isSentByAdmin ? 'sent-by-admin' :
+							!isSentByCurrentUser ? 'mg' :
+							null)
+					}
+				>
+					{
+						!isSentByAdmin ? <p className='pb'>{trimedName}</p> :
+						null}
+					<p>{ReactEmoji.emojify(text)}</p>
+				</div>
+			}
 		</Fragment>
 	);
 };
