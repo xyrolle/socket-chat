@@ -11,12 +11,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+const port = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(router);
 
 io.on('connect', (socket) => {
-	socket.on('join', ({ name, room }, callback) => {
-		const { error, user } = addUser({ id: socket.id, name, room });
+	socket.on('join', ({ name, room, image }, callback) => {
+		const { error, user } = addUser({ id: socket.id, name, room, image });
 
 		if (error) return callback(error);
 
@@ -48,4 +50,4 @@ io.on('connect', (socket) => {
 	});
 });
 
-server.listen(process.env.PORT || 5000, () => console.log(`Server has started.`));
+server.listen(port, () => console.log(`Server has started on port ${port}`));

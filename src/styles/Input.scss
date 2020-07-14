@@ -28,6 +28,9 @@ footer {
 		cursor: pointer;
 		appearance: none;
 	}
+	button:hover {
+		background: darken($inbox-secondary, 8%);
+	}
 	form {
 		width: 100%;
 		display: flex;

@@ -1,5 +1,5 @@
 .pb {
-	padding-bottom: 0.4rem;
+	padding-bottom: 0.6rem;
 	text-transform: capitalize;
 }
 
@@ -10,5 +10,11 @@
 
 .sent-by-admin {
 	margin: 1em 1em !important;
-	background: #c62828 !important;
+	font-size: 2em;
+	padding: 30px 0 0 20px !important;
+	background: #f57f17 !important;
+}
+
+.message-text {
+	padding-left: 2px;
 }

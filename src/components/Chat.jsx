@@ -32,14 +32,14 @@ const Chat = ({ location }) => {
 
 	useEffect(
 		() => {
-			const { name, room } = queryString.parse(location.search);
+			const { name, room, image } = queryString.parse(location.search);
 
 			socket = io(ENDPOINT);
 
 			setName(name);
 			setRoom(room);
 
-			socket.emit('join', { name, room }, (error) => {
+			socket.emit('join', { name, room, image }, (error) => {
 				if (error) {
 					alert(error);
 				}

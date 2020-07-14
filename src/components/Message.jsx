@@ -30,9 +30,13 @@ const Message = ({ message: { user, text }, name }) => {
 					}
 				>
 					{
-						!isSentByAdmin ? <p className='pb'>{trimedName}</p> :
+						!isSentByAdmin ? <p className='pb'>
+							{
+								isSentByCurrentUser ? trimedName :
+								user}
+						</p> :
 						null}
-					<p>{ReactEmoji.emojify(text)}</p>
+					<p className='message-text'>{ReactEmoji.emojify(text)}</p>
 				</div>
 			}
 		</Fragment>

@@ -6,6 +6,7 @@ import '../styles/Join.scss';
 export const Join = () => {
 	const [ name, setName ] = useState('');
 	const [ room, setRoom ] = useState('');
+	const [ image, setImage ] = useState('');
 
 	return (
 		<div className='joinOuterContainer'>
@@ -25,12 +26,18 @@ export const Join = () => {
 							type='text'
 							onChange={(evt) => setRoom(evt.target.value)}
 						/>
+						<input
+							placeholder='Image'
+							className='joinInput mt-20'
+							type='text'
+							onChange={(evt) => setImage(evt.target.value)}
+						/>
 						<Link
 							onClick={(evt) =>
 
 									!name || !room ? evt.preventDefault() :
 									null}
-							to={`/chat?name=${name}&room=${room}`}
+							to={`/chat?name=${name}&room=${room}&image=${image}`}
 						>
 							<button className='btn mt-20' type='submit'>
 								Sign In
